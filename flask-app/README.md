@@ -7,7 +7,7 @@ Packing a simple `flask` application into a docker container
 With docker installed, just run the following commands in bash.
 
     $ docker build --tag python-flask .
-    $ docker run --publish 5000:5000 python-flask
+    $ docker run --detach --publish 5000:5000 --name webapp python-flask
 
 To test your application just open a browser and type:
 
