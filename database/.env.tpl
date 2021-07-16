@@ -1,4 +1,4 @@
-HOST=localhost
-USER=root
-PASSWORD=<secret>
+DBHOST=localhost
+DBUSER=root
+DBPASSWORD=<secret>
 DATABASE=project
