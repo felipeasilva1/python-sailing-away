@@ -21,10 +21,10 @@ def init_db(database):
                    f'name VARCHAR(100) NOT NULL,'\
                    f'description VARCHAR(255))')
 
-    result = cursor.execute(f'INSERT INTO {database}.docker_apps '\
-                            f'(name, description) VALUES'\
-                            f'("flask-app", "A simple web application writen in Flask."), '\
-                            f'("database", "MySQL running in a container with a companion app.")')
+    cursor.execute(f'INSERT INTO {database}.docker_apps '\
+                   f'(name, description) VALUES'\
+                   f'("flask-app", "A simple web application writen in Flask."), '\
+                   f'("database", "MySQL running in a container with a companion app.")')
 
     connection.commit()
 
