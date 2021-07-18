@@ -35,4 +35,20 @@ Now, let's proceed.
 
     $ docker exec --tty --interactive mysql-db mysql -u root -p
 
-You may shorten the `--tty --interactive` to `-it` but i like the long version of arguments for clarity and it's a good practice to remember these types of syntax. 
+You may shorten the `--tty --interactive` to `-it` but i like the long version of arguments for clarity and it's a good practice to remember these types of syntax.
+
+Now that our database is up and running, let's build our python image that will connect to the same network and run queries against it.
+
+> build the python image
+
+    $ docker build --tag python-db-app .
+
+> running the app container
+
+    $ docker run \
+    --rm --detach \
+    --network mysql-net \
+    --name python-db-app \
+    python-db-app
+
+The `--rm` flag indicates to run the container and after the completion, remove it.
